@@ -1,0 +1,5 @@
+files: ./{spec,src}/**/*.cr
+run: AMBER_ENV=test crystal spec
+---
+files: ./shard.yml
+run: crystal deps

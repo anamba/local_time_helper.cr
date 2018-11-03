@@ -1,0 +1,9 @@
+name: local_time_helper
+version: 0.1.0
+
+authors:
+  - Aaron Namba <aaron@aaronnamba.com>
+
+crystal: 0.26.1
+
+license: MIT
