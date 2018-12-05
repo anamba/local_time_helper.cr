@@ -2,6 +2,10 @@
 
 Crystal implementation of view helper from https://github.com/basecamp/local_time
 
+[![Build Status](https://travis-ci.org/anamba/local_time_helper.cr.svg?branch=master)](https://travis-ci.org/anamba/local_time_helper.cr)
+[![Version](https://img.shields.io/github/tag/anamba/local_time_helper.cr.svg?maxAge=360)](https://github.com/anamba/local_time_helper.cr/releases/latest)
+[![License](https://img.shields.io/github/license/anamba/local_time_helper.cr.svg)](https://github.com/anamba/local_time_helper.cr/blob/master/LICENSE)
+
 ## Installation
 
 Add this to your application's `shard.yml`:
@@ -20,6 +24,10 @@ Made to be used with Amber, but will probably work fine in other situations. Req
 
 ```crystal
 require "local_time_helper"
+```
+
+```crystal
+include LocalTimeHelper
 ```
 
 ## Development
