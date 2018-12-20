@@ -4,7 +4,15 @@ module LocalTimeHelper
 
   DEFAULT_TIME_FORMAT = "%B %e, %Y %l:%M%p"
 
-  def local_time(time : Time, format : String = DEFAULT_TIME_FORMAT, **options)
+  def local_time(time : Time?, format : String = DEFAULT_TIME_FORMAT, **options)
+    if time.nil?
+      if (nil_message = options[:nil_message]?)
+        return nil_message
+      else
+        raise Exception.new("time argument was nil, but no nil_message was provided")
+      end
+    end
+
     time = utc_time(time)
 
     html_options = options.map { |k, v|
@@ -18,19 +26,27 @@ module LocalTimeHelper
     end
   end
 
-  def local_time(time : Time, *, format : String, **options)
+  def local_time(time : Time?, *, format : String, **options)
     local_time(time, format, **options)
   end
 
-  def local_date(time : Time, format : String = "%B %e, %Y", **options)
+  def local_date(time : Time?, format : String = "%B %e, %Y", **options)
     local_time(time, format, **options)
   end
 
-  def local_date(time : Time, *, format : String, **options)
+  def local_date(time : Time?, *, format : String, **options)
     local_time(time, format, **options)
   end
 
-  def local_relative_time(time : Time, type : String = "time-or-date", **options)
+  def local_relative_time(time : Time?, type : String = "time-or-date", **options)
+    if time.nil?
+      if (nil_message = options[:nil_message]?)
+        return nil_message
+      else
+        raise Exception.new("time argument was nil, but no nil_message was provided")
+      end
+    end
+
     time = utc_time(time)
 
     html_options = options.map { |k, v|
@@ -44,11 +60,11 @@ module LocalTimeHelper
     end
   end
 
-  def local_relative_time(time : Time, *, type : String, **options)
+  def local_relative_time(time : Time?, *, type : String, **options)
     local_relative_time(time, type)
   end
 
-  def local_time_ago(time, **options)
+  def local_time_ago(time : Time?, **options)
     local_relative_time(time, "time-ago", **options)
   end
 

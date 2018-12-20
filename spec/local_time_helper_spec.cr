@@ -45,6 +45,13 @@ describe LocalTimeHelper do
   # end
 
   describe "local_time" do
+    it "outputs provided string if nil (NEW)" do
+      msg = "never"
+      local_time(nil, nil_message: msg).should eq msg
+      local_time(nil, "%b %e", nil_message: msg).should eq msg
+      local_time(nil, format: "%b %e", nil_message: msg).should eq msg
+    end
+
     it "outputs time element in default format if none provided" do
       time = example_time_utc
       expected = %(<time data-format="%B %e, %Y %l:%M%P" data-local="time" datetime="#{example_time_js_str}">November 21, 2013  6:00am</time>)
@@ -92,6 +99,13 @@ describe LocalTimeHelper do
   end
 
   describe "local_date" do
+    it "outputs provided string if nil (NEW)" do
+      msg = "never"
+      local_date(nil, nil_message: msg).should eq msg
+      local_date(nil, "%B %e, %Y", nil_message: msg).should eq msg
+      local_date(nil, format: "%B %e, %Y", nil_message: msg).should eq msg
+    end
+
     it "outputs time element in default format if none provided" do
       time = example_time_utc
       expected = %(<time data-format="%B %e, %Y" data-local="time" datetime="#{example_time_js_str}">November 21, 2013</time>)
@@ -127,6 +141,12 @@ describe LocalTimeHelper do
   end
 
   describe "local_time_ago" do
+    it "outputs provided string if nil (NEW)" do
+      msg = "never"
+      local_time_ago(nil, nil_message: msg).should eq msg
+      local_time_ago(nil, format: "%B %e, %Y", nil_message: msg).should eq msg
+    end
+
     it "should return time element with data-local=\"time-ago\"" do
       time = example_time_utc
       expected = %(<time data-local="time-ago" datetime="#{example_time_js_str}">November 21, 2013  6:00am</time>)

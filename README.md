@@ -1,10 +1,10 @@
 # local_time_helper.cr
 
-Crystal implementation of view helper from https://github.com/basecamp/local_time
-
 [![Build Status](https://travis-ci.org/anamba/local_time_helper.cr.svg?branch=master)](https://travis-ci.org/anamba/local_time_helper.cr)
 [![Version](https://img.shields.io/github/tag/anamba/local_time_helper.cr.svg?maxAge=360)](https://github.com/anamba/local_time_helper.cr/releases/latest)
 [![License](https://img.shields.io/github/license/anamba/local_time_helper.cr.svg)](https://github.com/anamba/local_time_helper.cr/blob/master/LICENSE)
+
+Crystal implementation of view helper from https://github.com/basecamp/local_time, with one small Crystal-specific improvement to save you some typing (both kinds): a `nil_message` option (a string returned when the provided `time` argument is nil; typically something like `"never"`, or just `""`).
 
 ## Installation
 
@@ -29,6 +29,17 @@ require "local_time_helper"
 ```crystal
 include LocalTimeHelper
 ```
+
+```erb
+<%= local_time(Time.utc(2018, 11, 21, 6), format: "%B %e, %Y %l:%M%p") %>
+```
+
+produces:
+```html
+<time data-format="%B %e, %Y %l:%M%P" data-local="time" datetime="2018-11-21T06:00:00Z">November 21, 2018  6:00am</time>
+```
+
+See specs for more helper usage examples. Note that Crystal's `%p` and `%P` are swapped, which makes plenty of sense, but is different from other implementations (including JavaScript and Ruby).
 
 ## Development
 
