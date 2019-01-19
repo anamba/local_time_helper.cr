@@ -1,6 +1,6 @@
 # Crystal implementation of view helper for https://github.com/basecamp/local_time
 module LocalTimeHelper
-  VERSION = "0.1.0"
+  VERSION = "0.2.0"
 
   DEFAULT_TIME_FORMAT = "%B %e, %Y %l:%M%p"
 
@@ -9,7 +9,7 @@ module LocalTimeHelper
       if (nil_message = options[:nil_message]?)
         return nil_message
       else
-        raise Exception.new("time argument was nil, but no nil_message was provided")
+        raise ArgumentError.new("time argument was nil, but no nil_message was provided")
       end
     end
 
@@ -43,7 +43,7 @@ module LocalTimeHelper
       if (nil_message = options[:nil_message]?)
         return nil_message
       else
-        raise Exception.new("time argument was nil, but no nil_message was provided")
+        raise ArgumentError.new("time argument was nil, but no nil_message was provided")
       end
     end
 
