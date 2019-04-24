@@ -1,10 +1,12 @@
 # Crystal implementation of view helper for https://github.com/basecamp/local_time
 module LocalTimeHelper
-  VERSION = "0.2.0"
+  VERSION = "0.2.1"
 
   DEFAULT_TIME_FORMAT = "%B %e, %Y %l:%M%p"
 
   def local_time(time : Time?, format : String = DEFAULT_TIME_FORMAT, **options)
+    known_options = %w[nil_message]
+
     if time.nil?
       if (nil_message = options[:nil_message]?)
         return nil_message
@@ -16,7 +18,11 @@ module LocalTimeHelper
     time = utc_time(time)
 
     html_options = options.map { |k, v|
-      "#{HTML.escape(k.to_s)}=\"#{HTML.escape(v)}\""
+      if known_options.includes?(k)
+        nil
+      else
+        "#{HTML.escape(k.to_s)}=\"#{HTML.escape(v.to_s)}\""
+      end
     }.compact.join(" ")
 
     String.build do |html|
