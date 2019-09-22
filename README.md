@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/github/tag/anamba/local_time_helper.cr.svg?maxAge=360)](https://github.com/anamba/local_time_helper.cr/releases/latest)
 [![License](https://img.shields.io/github/license/anamba/local_time_helper.cr.svg)](https://github.com/anamba/local_time_helper.cr/blob/master/LICENSE)
 
-Crystal implementation of view helper from https://github.com/basecamp/local_time, with one small Crystal-specific improvement to save you some typing (both kinds): a `nil_message` option (a string returned when the provided `time` argument is nil; typically something like `"never"`, or just `""`).
+Crystal implementation of view helper from <https://github.com/basecamp/local_time>, with one small Crystal-specific improvement to save you some typing (both kinds): a `nil_message` option (a string returned when the provided `time` argument is nil; typically something like `"never"`, or just `""`).
 
 ## Installation
 
@@ -48,12 +48,12 @@ Contributions welcome if it doesn't support the options you need.
 
 ## Contributing
 
-1. Fork it (<https://github.com/anamba/local_time_helper.cr/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+1.  Fork it (<https://github.com/anamba/local_time_helper.cr/fork>)
+2.  Create your feature branch (`git checkout -b my-new-feature`)
+3.  Commit your changes (`git commit -am 'Add some feature'`)
+4.  Push to the branch (`git push origin my-new-feature`)
+5.  Create a new Pull Request
 
 ## Contributors
 
-- [anamba](https://github.com/anamba) Aaron Namba - creator, maintainer
+-   [anamba](https://github.com/anamba) Aaron Namba - creator, maintainer

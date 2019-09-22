@@ -155,8 +155,8 @@ describe LocalTimeHelper do
 
     it "should return time element with data-local=\"time-ago\" with provided html options" do
       time = example_time_utc
-      expected = %(<time data-local="time-ago" datetime="#{example_time_js_str}">November 21, 2013  6:00am</time>)
-      local_time_ago(time, class: "date-time")
+      expected = %(<time data-local="time-ago" datetime="#{example_time_js_str}" class="date-time">November 21, 2013  6:00am</time>)
+      local_time_ago(time, class: "date-time").should eq expected
     end
   end
 
