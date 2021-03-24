@@ -1,6 +1,6 @@
 # Crystal implementation of view helper for https://github.com/basecamp/local_time
 module LocalTimeHelper
-  VERSION = "0.2.1"
+  VERSION = "0.2.2"
 
   DEFAULT_TIME_FORMAT = "%B %e, %Y %l:%M%p"
 

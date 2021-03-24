@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.2 - 2021-04-24
+
+*   Support for Crystal 1.0
+
 ## v0.2.1 - 2019-04-24
 
 *   \[FIXED] Corrected minor issues with `nil_message` parameter
